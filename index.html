@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <section class="gamescreen">
+    <div class="title">
+      <h1>Acerte o amigo :D</h1>
+    </div>
+    <div class="hammerContainer">
+        <div class="player" id="player"></div>
+    </div>
+  <div class="btns">
+    <fieldset class="V_container_align"><strong>Align-items: </strong>Alinhamento vertical dos itens no container
+      <div class="action-btns">
+        <button onclick="updateVCssProperty(this.value)" value="flex-start">flex-start</button>
+        <button onclick="updateVCssProperty(this.value)" value="center">center</button>
+        <button onclick="updateVCssProperty(this.value)" value="flex-end">flex-end</button>
+      </div> 
+    </fieldset>
+    <fieldset class="H_container_align"><strong>Justify-content: </strong>Alinhamento horizontal do container
+      <div class="action-btns">
+        <button onclick="updateHCssProperty(this.value)" value="flex-start">flex-start</button>
+        <button onclick="updateHCssProperty(this.value)" value="center">center</button>
+        <button onclick="updateHCssProperty(this.value)" value="flex-end">flex-end</button>
+    </div>
+    </fieldset>
+  </div>
+</section>
+  
+  <script src="script.js"></script>
+</body>
+</html>
