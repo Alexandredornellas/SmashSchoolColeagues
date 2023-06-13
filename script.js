@@ -18,7 +18,18 @@ const possibilidades = {
   "centerflex-end": 8,
   "flex-endflex-end": 9,
 }
-hammer.addEventListener("click", function(e){
+
+document.addEventListener("keydown", function(event){
+  if (event.keyCode === 32) {
+    hammerHit();
+  }
+});
+
+hammer.addEventListener("click", function(event){
+    hammerHit();
+});
+
+function hammerHit(){
   hammer.style.backgroundImage = "url('./imgs/hammer_smashing.png')"
   const hammerHitPosition = hammerContainerEl.style.justifyContent + hammerContainerEl.style.alignItems
 
@@ -30,15 +41,15 @@ hammer.addEventListener("click", function(e){
     updateHits(hits);
   }
 
-  function updateHits(value){
-    pontuacao.textContent = value
-  }
-
-  
   setTimeout(function() {
     hammer.style.backgroundImage = "url('./imgs/hammer_fronta.png')"
   }, 200)
-});
+}
+
+
+function updateHits(value){
+  pontuacao.textContent = value
+}
 
 //Função para mudar verticalmente a localização do martelo
 function updateVCssProperty(value){
