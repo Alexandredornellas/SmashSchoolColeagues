@@ -13,7 +13,7 @@ const audioPlayerI = document.getElementById('audioPlayerIntro');
 const audioPlayerG = document.getElementById('audioPlayerGame');
 const audioPlayerH = document.getElementById('audioPlayerHit');
 const houseBackground = document.getElementById("gamescreen")
-const startS = document.getElementById("startScreen")
+const startscreen = document.getElementById("startScreen")
 
 window.addEventListener('load', function() {
   audioPlayerI.play();
@@ -98,11 +98,9 @@ function startGame(){
   if(gameState === false ){
     audioPlayerI.pause();
     audioPlayerG.play();
-    gameState = true;
-    btnStart.innerHTML = "Stop";
-    
-    title.style.color = "red"
-    startScreen()
+    gameState = true; 
+    title.style.color = "red";
+    startS();
 
     setInterval(() => {
       const hitSpot = document.getElementById(Math.floor((Math.random() * 9) + 1));
@@ -115,16 +113,16 @@ function startGame(){
       }, 3000);
     }, 5000);
 } else {
-  restart();
 }
 
-function restart(){
-  window.location.reload();
-}
+// function restart(){
+//   window.location.reload();
+// }
 
 
-function startScreen(){
-  startS.style.display = "flex";
+function startS(){
+  console.log("STARTED")
+  startscreen.style.display = "flex";
 
   let countdown = document.getElementById('countdown')
   var segundos = 3;
@@ -135,7 +133,7 @@ function startScreen(){
 
       if (segundos === 0) {
         clearInterval(interval);
-        fadeOut(startS)
+        fadeOut(startscreen)
       }
     }, 1000); // 1000 milissegundos = 1 segundo
   }

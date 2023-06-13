@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  margin: 4px; 0;
+  margin: 0;
 }
 
 .gamescreen {
@@ -140,7 +140,7 @@ h1 {
 @media (max-width: 732px) {
   .btns-wrapper {
     flex-direction: column;
-    gap:
+    gap: 0 ;
   }
 }
 
