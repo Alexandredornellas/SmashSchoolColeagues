@@ -25,11 +25,16 @@ hammer.addEventListener("click", function(e){
   console.log(possibilidades[hammerHitPosition])
   console.log(alvo)
   if(possibilidades[hammerHitPosition] == alvo){
-    hits += 1
+    hits++
     console.log("hits: " + hits)
-    pontuacao.append(hits);
+    updateHits(hits);
   }
 
+  function updateHits(value){
+    pontuacao.textContent = value
+  }
+
+  
   setTimeout(function() {
     hammer.style.backgroundImage = "url('./imgs/hammer_fronta.png')"
   }, 200)
