@@ -45,24 +45,28 @@ hammer.addEventListener("click", function(event){
 });
 
 function hammerHit(){
-  audioPlayerH.pause();
-  audioPlayerH.currentTime = 0;
-  audioPlayerH.play();
-  hammer.style.backgroundImage = "url('./imgs/hammer_smashing.png')"
-  const hammerHitPosition = hammerContainerEl.style.justifyContent + hammerContainerEl.style.alignItems
+  if(gameState === true){
+    audioPlayerH.pause();
+    audioPlayerH.currentTime = 0;
+    audioPlayerH.play();
+    hammer.style.backgroundImage = "url('./imgs/hammer_smashing.png')"
+    const hammerHitPosition = hammerContainerEl.style.justifyContent + hammerContainerEl.style.alignItems
 
-  console.log(possibilidades[hammerHitPosition])
-  console.log(alvo)
-  if(possibilidades[hammerHitPosition] == alvo){
-    tremerTela();
-    hits++
-    console.log("hits: " + hits)
-    updateHits(hits);
-  }
+    console.log(possibilidades[hammerHitPosition])
+    console.log(alvo)
+    if(possibilidades[hammerHitPosition] == alvo){
+      tremerTela();
+      hits++
+      console.log("hits: " + hits)
+      updateHits(hits);
+    }
 
   setTimeout(function() {
     hammer.style.backgroundImage = "url('./imgs/hammer_fronta.png')"
   }, 200)
+}else{
+  audioPlayerI.play();
+}
 }
 
 // Aumenta a quantidade de Hits realizados na tela
@@ -163,7 +167,7 @@ function updateBackground(){
   } else if (hits > 180 && hits < 220){
     houseBackground.style.backgroundImage = "url('./imgs/mansao5.jpg')"
   } else if (hits > 221){
-    houseBackground.style.backgroundImage = "url('./imgs/mansao5.jpg')"
+    houseBackground.style.backgroundImage = "url('./imgs/mansao6.jpg')"
   }
 }
 
