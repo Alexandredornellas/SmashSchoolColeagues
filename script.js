@@ -12,9 +12,12 @@ var gameState = false;
 const audioPlayerI = document.getElementById('audioPlayerIntro');
 const audioPlayerG = document.getElementById('audioPlayerGame');
 const audioPlayerH = document.getElementById('audioPlayerHit');
-audioPlayerI.play();
 const houseBackground = document.getElementById("gamescreen")
 const startS = document.getElementById("startScreen")
+
+window.addEventListener('load', function() {
+  audioPlayerI.play();
+});
 
 
 
@@ -100,11 +103,11 @@ function startGame(){
 
     setInterval(() => {
       const hitSpot = document.getElementById(Math.floor((Math.random() * 9) + 1));
-      hitSpot.style.backgroundColor = "red";
+      hitSpot.style.backgroundImage = `url('./imgs/${Math.floor((Math.random() *9)+1)}.jpg')`;
       alvo = hitSpot.id;
       console.log(alvo)
       setTimeout(() => {
-        hitSpot.style.backgroundColor = "blue";
+        hitSpot.style.backgroundImage = "none";
         alvo = null;
       }, 3000);
     }, 5000);
