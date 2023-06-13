@@ -16,6 +16,8 @@ audioPlayerI.play();
 const houseBackground = document.getElementById("gamescreen")
 const startS = document.getElementById("startScreen")
 
+const btnStart = document.getElementById("btnStart");
+
 
 
 const possibilidades = {
@@ -95,6 +97,8 @@ function startGame(){
     audioPlayerI.pause();
     audioPlayerG.play();
     gameState = true;
+    btnStart.innerHTML = "Stop";
+    
     title.style.color = "red"
     startScreen()
 
@@ -109,8 +113,13 @@ function startGame(){
       }, 3000);
     }, 5000);
 } else {
+  restart();
 }
-//hitSpot
+
+function restart(){
+  window.location.reload();
+}
+
 
 function startScreen(){
   startS.style.display = "flex";
@@ -118,7 +127,7 @@ function startScreen(){
   let countdown = document.getElementById('countdown')
   var segundos = 3;
 
-      var interval = setInterval(function() {
+      var interval = setInterval(() => {
       segundos--;
       countdown.textContent = segundos;
 
@@ -142,10 +151,6 @@ function startScreen(){
     }, 100); // Ajuste o intervalo de tempo para controlar a velocidade do fadeout
   }
 
-}
-
-
-function captureClickHit(){
 }
 
 function updateBackground(){
