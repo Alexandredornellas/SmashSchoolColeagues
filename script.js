@@ -6,6 +6,7 @@ hammerContainerEl.style.justifyContent = "center"
 hammerContainerEl.style.alignItems = "center"
 var alvo = null;
 var hits = 0;
+var gameState = false;
 
 const possibilidades = {
   "flex-startflex-start": 1,
@@ -46,7 +47,7 @@ function hammerHit(){
   }, 200)
 }
 
-
+// Aumenta a quantidade de Hits realizados na tela
 function updateHits(value){
   pontuacao.textContent = value
 }
@@ -72,17 +73,24 @@ function updateHCssProperty(value){
 
 }
 
+
+//Inicia o jogo e torna o estado do jogo = true
 function startGame(){
-  setInterval(() => {
-    const hitSpot = document.getElementById(Math.floor((Math.random() * 9) + 1));
-    hitSpot.style.backgroundColor = "red";
-    alvo = hitSpot.id;
-    console.log(alvo)
-    setTimeout(() => {
-      hitSpot.style.backgroundColor = "blue";
-      alvo = null;
-    }, 3000);
-  }, 5000);
+  if(gameState === false ){
+    gameState = true;
+    setInterval(() => {
+      const hitSpot = document.getElementById(Math.floor((Math.random() * 9) + 1));
+      hitSpot.style.backgroundColor = "red";
+      alvo = hitSpot.id;
+      console.log(alvo)
+      setTimeout(() => {
+        hitSpot.style.backgroundColor = "blue";
+        alvo = null;
+      }, 3000);
+    }, 5000);
+} else {
+  alert("Tenha paciencia rapá!")
+}
 //hitSpot
 
 }
