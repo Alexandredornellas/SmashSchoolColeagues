@@ -7,6 +7,10 @@ body {
   background-color: rgb(132, 0, 0);
 }
 
+h1 {
+  margin: 4px; 0;
+}
+
 .gamescreen {
   display: flex;
   flex-direction: column;
@@ -68,6 +72,7 @@ body {
   padding-left: 20%;
   position: relative;
   min-height: 300px;
+  min-width: 350px;
 }
 
 .player {
@@ -100,8 +105,6 @@ body {
 .hitSpotLine{
   display: flex;
   justify-content: space-between;
-
-
 }
 
 .hitSpot{
@@ -119,15 +122,26 @@ body {
   background-position: center;
 }
 
-
 .btns {
   color: white;
   flex-grow: .5;
   display: flex;
+  flex-flow: column;
   background-color: rgb(51, 16, 16, 0.1);
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 2em;
+}
+
+.btns-wrapper {
+  display: flex;
+}
+
+@media (max-width: 732px) {
+  .btns-wrapper {
+    flex-direction: column;
+    gap:
+  }
 }
 
 fieldset{
@@ -216,3 +230,77 @@ button:hover{
   display: none;
 }
 
+@media screen and (max-device-width: 480px){
+  .player {
+    width: 180px;
+    height: 180px;
+  }
+  .hitSpot {
+    width: 180px;
+    height: 180px;
+  }
+  .hammerContainer {
+    max-height: 800px;
+  }
+   button {
+    width: 250px;
+    font-size: 2.2em;
+    padding: .5em 1em;
+    height: fit-content;
+  }
+  .startBTN {
+    width: fit-content;
+    font-size: 5em;
+    padding: .5em 1em;
+    height: fit-content;
+  }
+  .btns-wrapper {
+    margin-top: 2em;
+    flex-direction: column;
+    gap: 1em;
+  }
+  fieldset strong {
+    font-size: 2.5em;
+  }
+  .action-btns {
+    gap: 16px;
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 762px) {
+  .player {
+    width: 150px;
+    height: 150px;
+  }
+  .hitSpot {
+    width: 150px;
+    height: 150px;
+  }
+  .hammerContainer {
+    max-height: 800px;
+    min-height: 500px;
+  }
+   button {
+    width: 200px;
+    font-size: 1.8em;
+    padding: .5em 1em;
+    height: fit-content;
+  }
+  .startBTN {
+    width: fit-content;
+    font-size: 4em;
+    padding: .5em 1em;
+    height: fit-content;
+  }
+  .btns-wrapper {
+    margin-top: 2em;
+    flex-direction: column;
+    gap: 1em;
+  }
+  fieldset strong {
+    font-size: 2.5em;
+  }
+  .action-btns {
+    gap: 16px;
+  }
+}
