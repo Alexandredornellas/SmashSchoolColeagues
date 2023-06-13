@@ -8,6 +8,11 @@ var alvo = null;
 var hits = 0;
 var gameState = false;
 
+const audioPlayerI = document.getElementById('audioPlayerIntro');
+const audioPlayerG = document.getElementById('audioPlayerGame');
+const audioPlayerH = document.getElementById('audioPlayerHit');
+
+
 const possibilidades = {
   "flex-startflex-start": 1,
   "centerflex-start": 2,
@@ -31,12 +36,16 @@ hammer.addEventListener("click", function(event){
 });
 
 function hammerHit(){
+  audioPlayerH.pause();
+  audioPlayerH.currentTime = 0;
+  audioPlayerH.play();
   hammer.style.backgroundImage = "url('./imgs/hammer_smashing.png')"
   const hammerHitPosition = hammerContainerEl.style.justifyContent + hammerContainerEl.style.alignItems
 
   console.log(possibilidades[hammerHitPosition])
   console.log(alvo)
   if(possibilidades[hammerHitPosition] == alvo){
+    tremerTela();
     hits++
     console.log("hits: " + hits)
     updateHits(hits);
@@ -77,6 +86,7 @@ function updateHCssProperty(value){
 //Inicia o jogo e torna o estado do jogo = true
 function startGame(){
   if(gameState === false ){
+    audioPlayerG.play();
     gameState = true;
     setInterval(() => {
       const hitSpot = document.getElementById(Math.floor((Math.random() * 9) + 1));
@@ -98,3 +108,20 @@ function startGame(){
 function captureClickHit(){
   
 }
+
+//Faz a tela tremer ao realizar acertar o infeliz
+function tremerTela() {
+  document.body.classList.add("tela-tremer");
+
+  setTimeout(function() {
+    document.body.classList.remove("tela-tremer");
+  }, 500);
+}
+
+//Inicia a música assim que abrir a página
+function playIntro() {
+  const audioPlayerI = document.getElementById('audioPlayerIntro');
+  audioPlayerI.play();
+}
+
+playIntro();
