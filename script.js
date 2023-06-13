@@ -2,6 +2,7 @@
 const hammer = document.getElementById("player")
 const hammerContainerEl = document.querySelector(".hammerContainer")
 const pontuacao = document.getElementById("pontuacao");
+const title = document.getElementById("title")
 hammerContainerEl.style.justifyContent = "center"
 hammerContainerEl.style.alignItems = "center"
 var alvo = null;
@@ -12,6 +13,9 @@ const audioPlayerI = document.getElementById('audioPlayerIntro');
 const audioPlayerG = document.getElementById('audioPlayerGame');
 const audioPlayerH = document.getElementById('audioPlayerHit');
 audioPlayerI.play();
+const houseBackground = document.getElementById("gamescreen")
+const startS = document.getElementById("startScreen")
+
 
 
 const possibilidades = {
@@ -60,6 +64,7 @@ function hammerHit(){
 // Aumenta a quantidade de Hits realizados na tela
 function updateHits(value){
   pontuacao.textContent = value
+  updateBackground();
 }
 
 //Função para mudar verticalmente a localização do martelo
@@ -87,8 +92,12 @@ function updateHCssProperty(value){
 //Inicia o jogo e torna o estado do jogo = true
 function startGame(){
   if(gameState === false ){
+    audioPlayerI.pause();
     audioPlayerG.play();
     gameState = true;
+    title.style.color = "red"
+    startScreen()
+
     setInterval(() => {
       const hitSpot = document.getElementById(Math.floor((Math.random() * 9) + 1));
       hitSpot.style.backgroundColor = "red";
@@ -100,14 +109,57 @@ function startGame(){
       }, 3000);
     }, 5000);
 } else {
-  alert("Tenha paciencia rapá!")
 }
 //hitSpot
 
+function startScreen(){
+  startS.style.display = "flex";
+
+  let countdown = document.getElementById('countdown')
+  var segundos = 3;
+
+      var interval = setInterval(function() {
+      segundos--;
+      countdown.textContent = segundos;
+
+      if (segundos === 0) {
+        clearInterval(interval);
+        fadeOut(startS)
+      }
+    }, 1000); // 1000 milissegundos = 1 segundo
+  }
+
+  function fadeOut(elemento) {
+    var opacidade = 1;
+    var interval = setInterval(function() {
+      opacidade -= 0.1;
+      elemento.style.opacity = opacidade;
+
+      if (opacidade <= 0) {
+        clearInterval(interval);
+        elemento.style.display = 'none';
+      }
+    }, 100); // Ajuste o intervalo de tempo para controlar a velocidade do fadeout
+  }
+
 }
 
+
 function captureClickHit(){
-  
+}
+
+function updateBackground(){
+  if(hits > 20 && hits < 59) {
+    houseBackground.style.backgroundImage = "url('./imgs/mansao2.jpg')"
+  } else if (hits > 60 && hits < 119){
+    houseBackground.style.backgroundImage = "url('./imgs/mansao3.jpg')"
+  } else if (hits > 120 && hits < 179){
+    houseBackground.style.backgroundImage = "url('./imgs/mansao4.jpg')"
+  } else if (hits > 180 && hits < 220){
+    houseBackground.style.backgroundImage = "url('./imgs/mansao5.jpg')"
+  } else if (hits > 221){
+    houseBackground.style.backgroundImage = "url('./imgs/mansao5.jpg')"
+  }
 }
 
 //Faz a tela tremer ao realizar acertar o infeliz
