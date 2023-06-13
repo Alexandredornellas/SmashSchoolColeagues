@@ -1,4 +1,3 @@
-
 //Função para fazer o martelo bater
 var hammer = document.getElementById("player")
 
