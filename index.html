@@ -47,8 +47,14 @@
         Start
       </button>
     </div>
-    <fieldset class="V_container_align"><strong>Align-items: </strong>Alinhamento vertical dos itens no container
-      <div class="action-btns">
+    <fieldset class="V_container_align" style="flex-flow: column;">
+      <div>
+        <strong>Align-items: </strong>
+        <div>
+          Alinhamento vertical dos itens no container
+        </div>
+      </div>
+      <div class="action-btns" style="flex-flow: column; align-items: center;">
         <button onclick="updateVCssProperty(this.value)" value="flex-start">flex-start</button>
         <button onclick="updateVCssProperty(this.value)" value="center">center</button>
         <button onclick="updateVCssProperty(this.value)" value="flex-end">flex-end</button>
