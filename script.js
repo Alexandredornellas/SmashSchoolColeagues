@@ -11,6 +11,7 @@ var gameState = false;
 const audioPlayerI = document.getElementById('audioPlayerIntro');
 const audioPlayerG = document.getElementById('audioPlayerGame');
 const audioPlayerH = document.getElementById('audioPlayerHit');
+audioPlayerI.play();
 
 
 const possibilidades = {
@@ -111,6 +112,7 @@ function captureClickHit(){
 
 //Faz a tela tremer ao realizar acertar o infeliz
 function tremerTela() {
+  document.body.classList.remove("tela-tremer");
   document.body.classList.add("tela-tremer");
 
   setTimeout(function() {
@@ -118,10 +120,3 @@ function tremerTela() {
   }, 500);
 }
 
-//Inicia a música assim que abrir a página
-function playIntro() {
-  const audioPlayerI = document.getElementById('audioPlayerIntro');
-  audioPlayerI.play();
-}
-
-playIntro();

@@ -123,6 +123,14 @@ button:hover{
   transform: scale(1.1);
 }
 
+.startBTN{
+  background: radial-gradient(rgba(248, 0, 0, 1), rgba(255, 255, 255, 0));
+  font-size: 2em;
+  width: 200px;
+  height: 70px;
+  color: rgb(84, 3, 3);
+}
+
 
 @keyframes shake {
   0% {
