@@ -1,81 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N2 FNR Sistemas distribuídos</title>
 </head>
 
 <body>
-  <section class="gamescreen" id="gamescreen">
-    <div class="title" id="title">
-      <h1>Hit the buddy</h1>
-      <label id="pontuacao">0</label>
-    </div>
-    <div class="startScreen" id="startScreen">
-      <span id="countdown">3</span>
-    </div>
-    <div class="hammerContainer">
-      <div class="player" id="player"></div>
-      <div class="hammerMap">
-        <div class="hitSpotLine" id="hitSpotLine1">
-          <div class="hitSpot" id="1">1</div>
-          <div class="hitSpot" id="2">2</div>
-          <div class="hitSpot" id="3">3</div>
+    <h1>Sistemas distribuidos N2, FNR</h1>
+    <div class="alunos">
+        <div class="aluno">
+            <h2>Alexandre</h2>
+            <div class="img-wrapper">
+                <img src="https://placehold.co/600x400/EEE/31343C" />
+            </div>
         </div>
-        <div class="hitSpotLine" id="hitSpotLine2">
-          <div class="hitSpot" id="4">4</div>
-          <div class="hitSpot" id="5">5</div>
-          <div class="hitSpot" id="6">6</div>
+        <div class="aluno">
+            <h2>Pedro Ivo</h2>
+            <div class="img-wrapper">
+                <img src="https://placehold.co/600x400/EEE/31343C" />
+            </div>
         </div>
-        <div class="hitSpotLine" id="hitSpotLine3">
-          <div class="hitSpot" id="7">7</div>
-          <div class="hitSpot" id="8">8</div>
-          <div class="hitSpot" id="9">9</div>
+        <div class="aluno">
+            <h2>Bãozex</h2>
+            <div class="img-wrapper">
+                <img src="https://placehold.co/600x400/EEE/31343C" />
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="btns">
-      <div class="btns-wrapper">
-        <fieldset class="H_container_align">
-          <strong>Justify-content: </strong>
-          <!-- Alinhamento horizontal do container -->
-          <div class="action-btns">
-            <button class="game-btn" onclick="updateHCssProperty(this.value)" value="flex-start">flex-start</button>
-            <button class="game-btn" onclick="updateHCssProperty(this.value)" value="center">center</button>
-            <button class="game-btn" onclick="updateHCssProperty(this.value)" value="flex-end">flex-end</button>
-          </div>
-        </fieldset>
-        
-        <fieldset class="V_container_align" style="flex-flow: column;">
-          <div>
-            <strong>Align-items: </strong>
-            <!-- <div>
-            Alinhamento vertical dos itens no container
-          </div> -->
-          </div>
-          <div class="action-btns">
-            <button class="game-btn" onclick="updateVCssProperty(this.value)" value="flex-start">flex-start</button>
-            <button class="game-btn" onclick="updateVCssProperty(this.value)" value="center">center</button>
-            <button class="game-btn" onclick="updateVCssProperty(this.value)" value="flex-end">flex-end</button>
-          </div>
-        </fieldset>
-      </div>
-      <div class="startBTN-wrapper" style="display: flex;">
-        <button class="startBTN" onclick="startGame()">
-          Start
-        </button>
-      </div>
-    </div>
-    
-  </section>
-  <div class="audios">
-    <audio id="audioPlayerIntro" src="./audios/IntroVivaldi.mp3" controls preload></audio>
-    <audio id="audioPlayerGame" src="./audios/GameRainingBlood.mp3" controls preload></audio>
-    <audio id="audioPlayerHit" src="./audios/hammerHit.mp3" controls preload></audio>
-  </div>
-
-  <script src="script.js"></script>
+    <nav>
+        <a href="./whack-a-budy.html">Game</a>
+        <a href="./documentation">Documentação</a>
+    </nav>
 </body>
 
 </html>
+
+<style>
+    h1 {
+        text-align: center;
+        margin: 2em 0;
+    }
+    .alunos {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    }
+    .aluno {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aluno h2 {
+        margin: 0;
+    }
+
+    .img-wrapper {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 10px 0;
+    }
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+</style>

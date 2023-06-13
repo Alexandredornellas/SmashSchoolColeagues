@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <section class="gamescreen" id="gamescreen">
+    <div class="title" id="title">
+      <h1>Hit the buddy</h1>
+      <label id="pontuacao">0</label>
+    </div>
+    <div class="startScreen" id="startScreen">
+      <span id="countdown">3</span>
+    </div>
+    <div class="hammerContainer">
+      <div class="player" id="player"></div>
+      <div class="hammerMap">
+        <div class="hitSpotLine" id="hitSpotLine1">
+          <div class="hitSpot" id="1">1</div>
+          <div class="hitSpot" id="2">2</div>
+          <div class="hitSpot" id="3">3</div>
+        </div>
+        <div class="hitSpotLine" id="hitSpotLine2">
+          <div class="hitSpot" id="4">4</div>
+          <div class="hitSpot" id="5">5</div>
+          <div class="hitSpot" id="6">6</div>
+        </div>
+        <div class="hitSpotLine" id="hitSpotLine3">
+          <div class="hitSpot" id="7">7</div>
+          <div class="hitSpot" id="8">8</div>
+          <div class="hitSpot" id="9">9</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btns">
+      <div class="btns-wrapper">
+        <fieldset class="H_container_align">
+          <strong>Justify-content: </strong>
+          <!-- Alinhamento horizontal do container -->
+          <div class="action-btns">
+            <button class="game-btn" onclick="updateHCssProperty(this.value)" value="flex-start">flex-start</button>
+            <button class="game-btn" onclick="updateHCssProperty(this.value)" value="center">center</button>
+            <button class="game-btn" onclick="updateHCssProperty(this.value)" value="flex-end">flex-end</button>
+          </div>
+        </fieldset>
+        
+        <fieldset class="V_container_align" style="flex-flow: column;">
+          <div>
+            <strong>Align-items: </strong>
+            <!-- <div>
+            Alinhamento vertical dos itens no container
+          </div> -->
+          </div>
+          <div class="action-btns">
+            <button class="game-btn" onclick="updateVCssProperty(this.value)" value="flex-start">flex-start</button>
+            <button class="game-btn" onclick="updateVCssProperty(this.value)" value="center">center</button>
+            <button class="game-btn" onclick="updateVCssProperty(this.value)" value="flex-end">flex-end</button>
+          </div>
+        </fieldset>
+      </div>
+      <div class="startBTN-wrapper" style="display: flex;">
+        <button class="startBTN" onclick="startGame()">
+          Start
+        </button>
+      </div>
+    </div>
+    
+  </section>
+  <div class="audios">
+    <audio id="audioPlayerIntro" src="./audios/IntroVivaldi.mp3" controls preload></audio>
+    <audio id="audioPlayerGame" src="./audios/GameRainingBlood.mp3" controls preload></audio>
+    <audio id="audioPlayerHit" src="./audios/hammerHit.mp3" controls preload></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
