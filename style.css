@@ -113,7 +113,14 @@ button{
   height: 35px;
   border-radius: 10px;
   cursor: pointer;
-  
+}
+
+button:active{
+  background-color: red;
+}
+
+button:hover{
+  transform: scale(1.1);
 }
 
 
