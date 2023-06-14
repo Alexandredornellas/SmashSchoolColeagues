@@ -8,30 +8,31 @@
 </head>
 
 <body>
-    <h1>Sistemas distribuidos N2, FNR</h1>
+    <h1>Sistemas distribuidos N2 - FNR</h1>
+    <h2 style="text-align: center; margin-bottom: 2em;">ADS - 4 período</h2>
     <div class="alunos">
         <div class="aluno">
             <h2>Alexandre</h2>
             <div class="img-wrapper">
-                <img src="https://placehold.co/600x400/EEE/31343C" />
+                <img src="imgs/alexandre.jpg" />
             </div>
         </div>
         <div class="aluno">
             <h2>Pedro Ivo</h2>
             <div class="img-wrapper">
-                <img src="https://placehold.co/600x400/EEE/31343C" />
+                <img src="imgs/pedro-ivo.jpg" />
             </div>
         </div>
         <div class="aluno">
-            <h2>Bãozex</h2>
+            <h2>Yan Felix</h2>
             <div class="img-wrapper">
-                <img src="https://placehold.co/600x400/EEE/31343C" />
+                <img src="imgs/yan-felix.jpg" />
             </div>
         </div>
     </div>
     <nav>
-        <a href="./whack-a-budy.html">Game</a>
-        <a href="./documentation">Documentação</a>
+        <a class="btn-link" href="./whack-a-budy.html">Game</a>
+        <a class="btn-link" href="./documentation.html">Documentação</a>
     </nav>
 </body>
 
@@ -40,14 +41,22 @@
 <style>
     h1 {
         text-align: center;
-        margin: 2em 0;
+        margin: 1em 0;
+        color: #303030;
+    }
+    h2 {
+        color: #303030;
     }
     .alunos {
         display: flex;
         justify-content: center;
         gap: 1em;
+        flex-wrap: wrap;
+        background: #D2d2d2;
+        padding: 1em;
     }
     .aluno {
+        color: #303030;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -69,5 +78,28 @@
         height: 100%;
         object-fit: cover;
     }
+
+    nav {
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .btn-link {
+        padding: 1em;
+        border-radius: 5px;
+        background-color: #303030;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .btn-link:hover {
+        background-color: #B2B2B2;
+    }
+
+
 
 </style>

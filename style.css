@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  margin: 4px; 0;
+  margin: 0;
 }
 
 .gamescreen {
@@ -111,11 +111,15 @@ h1 {
   justify-content: center;
   width: 100px;
   height: 100px;
-  background-color: rgba(0, 0, 200, 0.7);
+  background-color: rgba(0, 0, 23, 0.669);
   align-items: flex-end;
   color: white;
   cursor: pointer;
   border-radius: 50%;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .btns {
@@ -136,7 +140,7 @@ h1 {
 @media (max-width: 732px) {
   .btns-wrapper {
     flex-direction: column;
-    gap:
+    gap: 0 ;
   }
 }
 
